@@ -1,0 +1,25 @@
+{
+  "name": "blog-view",
+  "version": "1.0.0",
+  "description": "我的博客前端组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/interest-life/blog-view.git"
+  },
+  "keywords": [
+    "blog-view"
+  ],
+  "author": "LQ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interest-life/blog-view/issues"
+  },
+  "homepage": "https://github.com/interest-life/blog-view#readme",
+  "dependencies": {
+    "react": "^16.4.1"
+  }
+}
