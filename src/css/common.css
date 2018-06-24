@@ -1,0 +1,77 @@
+.blog_container{
+    /*height: 800px;*/
+}
+
+.blog_header{
+    border:1px solid #16c8ff;
+    height:50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.blog_header .blog_logo{
+    width: 30%;
+    border: 1px solid gainsboro;
+    height: 100%;
+}
+.blog_header .blog_nav{
+    width:70%;
+    border: 1px solid darkred;
+    height: 100%;
+    padding-right: 10%;
+}
+
+.blog_nav ul{
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    float: right;
+}
+
+.blog_nav ul li{
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.blog_nav ul li:hover{
+    color: lightseagreen;
+    cursor: pointer;
+}
+
+.blog_login{
+    display: flex;
+    flex-flow: row nowrap;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    border: 1px solid forestgreen;
+    height: 600px;
+    align-items: center;
+}
+
+.blog_login .login_container{
+    height: 260px;
+    width: 300px;
+    padding-top: 100px;
+    margin-right: 200px;
+    border: 1px solid gray;
+}
+
+.login_container label{
+    display: inline-block;
+    text-align: justify;
+    text-align-last: justify;
+    width: 100px;
+}
+
+.login_container button{
+    align:center;
+    margin-top: 20px;
+}
