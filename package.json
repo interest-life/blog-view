@@ -32,6 +32,7 @@
     "component-webpack-plugin": "^0.2.1",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.18.0",
     "npm": "^6.1.0",
     "open-browser-webpack-plugin": "0.0.5",
     "react": "^16.4.1",

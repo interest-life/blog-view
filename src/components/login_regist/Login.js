@@ -9,7 +9,13 @@ export default class Login extends React.Component{
     }
 
     login(){
-        alert("用户登陆");
+        Axios.get("/api/login",{
+            params: {"ID":123213},
+            data: {"name":"LQ","SEX":"男"},
+            withCredentials: true
+        }).then((data)=>{
+            console.log(data);
+        })
     }
 
     render(){

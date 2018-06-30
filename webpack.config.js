@@ -57,7 +57,13 @@ var config = {
     port:8087,
     host:"127.0.0.1",
     disableHostCheck: true,
-      historyApiFallback: true
+    historyApiFallback:true,
+      proxy: {
+          "/api/*": {
+              target: "http://localhost:8082",
+              secure: true,
+          }
+      }
   }
 }
 module.exports = config;
