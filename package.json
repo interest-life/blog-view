@@ -4,7 +4,7 @@
   "description": "我的博客前端组件",
   "main": "index.js",
   "scripts": {
-    "dev": "webPack-dev-server --devtool eval --colors --progress --config  webpack.config.js",
+    "dev": "webPack-dev-server --inline --devtool eval --colors --progress --config  webpack.config.js",
     "build": "webpack"
   },
   "repository": {

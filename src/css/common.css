@@ -57,9 +57,7 @@
 }
 
 .blog_login .login_container{
-    height: 260px;
     width: 300px;
-    padding-top: 100px;
     margin-right: 200px;
     border: 1px solid gray;
 }
@@ -69,9 +67,35 @@
     text-align: justify;
     text-align-last: justify;
     width: 100px;
+    margin-right: 10px;
 }
 
 .login_container button{
-    align:center;
-    margin-top: 20px;
+    align: center;
+    display: inline-block;
+    margin-top: 10%;
+    margin-left: 43%;
+}
+
+.login_register_options a{
+    display: inline-block;
+    background: #dcd5de;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    color: #187490;
+    padding: 0 20px;
+}
+
+.login_register_div{
+    padding-top: 20px;
+}
+
+.login_register_div >div{
+    line-height: 50px;
+    padding-left: 18px;
+}
+
+.login_register_div input{
+    width: 56%;
 }

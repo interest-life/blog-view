@@ -13,6 +13,7 @@ var config = {
     filename:'blog-boundle.js',
    // publicPath:'/blog/'
   },
+  devtool: 'source-map',
   module:{
     rules:[
       {
