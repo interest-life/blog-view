@@ -53,18 +53,19 @@ var config = {
     }),
       new OpenBrowserPlugin({url: 'http://localhost:8087'})
   ],
-  devtool: 'eval-source-map',
   devServer:{
     port:8087,
-    host:"127.0.0.1",
+    host:"localhost",
     disableHostCheck: true,
     historyApiFallback:true,
-      proxy: {
-          "/api/*": {
-              target: "http://localhost:8082",
-              secure: true,
-          }
-      }
-  }
+    proxy:{
+        "/api/*": {
+            target: "http://localhost:8082",
+                secure: false,
+                changeOrigin:true
+        }
+    }
+  },
+
 }
 module.exports = config;

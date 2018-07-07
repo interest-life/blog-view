@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import $ from 'jquery'
 
 export default class Login extends React.Component{
     constructor(props){
@@ -30,7 +31,7 @@ export default class Login extends React.Component{
                         <a href="#" javascript="void(0)" id="login" onClick={this.changeComponent.bind(this)}>登陆</a>
                         <a href="#" javascript="void(0)" id="register" onClick={this.changeComponent.bind(this)}>注册</a>
                     </div>
-                    {this.state.showLoginComponent?<LoginComponent/>:<RegisterComponent register={this.register}/>}
+                    {this.state.showLoginComponent?<LoginComponent {...this.props}/>:<RegisterComponent {...this.props} register={this.register}/>}
                 </div>
             </div>
         );
@@ -41,23 +42,23 @@ class LoginComponent extends React.Component{
     constructor(props){
         super();
         this.props = props;
+        console.log(this.props)
     }
 
     login(){
         var no = this.loginNoInput.value;
         var pwd = this.loginPwdInput.value;
-        Axios.post("/api/user/login",{
-            data:{no:no,pwd:pwd},
-            withCredentials: true
-        }).then((result)=>{
-            console.log(result);
-            if(result.data.user){
-                localStorage.setItem("user",result.data.user);
-            }
-            else{
-                alert(result.data.message);
-            }
-        })
+        if(this.validataLoginMes(no,pwd)){
+            Axios.post("/api/user/login",{
+                data:{no:no,pwd:pwd},
+                withCredentials: true
+            }).then((result)=>{
+                this.props.history.push("/");
+                console.log(data);
+            }).catch((err)=>{
+                console.log(err);
+            })
+        }
     }
     render(){
         return (
@@ -66,13 +67,21 @@ class LoginComponent extends React.Component{
                     <label>账号</label><input type="text" ref={(input)=>{this.loginNoInput = input}}/><br/>
                 </div>
                 <div>
-                    <label>密码</label><input type="password" ref={(input)=>{this.loginPwdInput=input}}/>
+                    <label>密码</label><input type="text" ref={(input)=>{this.loginPwdInput=input}}/>
                 </div>
                 <div>
                     <button onClick={this.login.bind(this)}>登陆</button>
                 </div>
             </div>
         );
+    }
+
+    validataLoginMes(no,pwd){
+        if(no==""||pwd==""){
+            alert("请输入用户名和密码！");
+            return false;
+        }
+        return true;
     }
 }
 
@@ -96,6 +105,8 @@ class RegisterComponent extends React.Component{
                 if(result.data.message == "注册成功"){
                     alert("注册成功！");
                 }
+            }).catch((err)=>{
+                console.log(err);
             })
         }
     }
