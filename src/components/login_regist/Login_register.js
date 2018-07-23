@@ -1,6 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import $ from 'jquery'
 
 export default class Login extends React.Component{
     constructor(props){
@@ -53,8 +52,13 @@ class LoginComponent extends React.Component{
                 data:{no:no,pwd:pwd},
                 withCredentials: true
             }).then((result)=>{
-                this.props.history.push("/");
-                console.log(data);
+                if(result.data.message == "loginSuccess"){
+                    console.log(result);
+                    sessionStorage.setItem("user",JSON.stringify(result.data.user))
+                    this.props.history.push("/");
+                }else{
+                    alert(result.data.message);
+                }
             }).catch((err)=>{
                 console.log(err);
             })

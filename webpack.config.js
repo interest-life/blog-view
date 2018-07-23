@@ -51,7 +51,7 @@ var config = {
       template:'./src/index.html',
       filename:'index.html'
     }),
-      new OpenBrowserPlugin({url: 'http://localhost:8087'})
+      new OpenBrowserPlugin({url: 'http://localhost:8087/home'})
   ],
   devServer:{
     port:8087,
